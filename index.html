@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社賢材社 | 建設設備・施工管理のプロフェッショナル</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans JP', sans-serif;
+      color: #212121;
+      line-height: 1.7;
+    }
+
+    :root {
+      --blue-dark:  #0D47A1;
+      --blue-main:  #1565C0;
+      --blue-mid:   #1976D2;
+      --blue-light: #42A5F5;
+      --blue-pale:  #E3F2FD;
+      --gray-light: #F5F7FA;
+      --gray:       #757575;
+      --text:       #212121;
+      --white:      #FFFFFF;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    section { padding: 80px 0; }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 4px;
+      background: var(--blue-light);
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 50px;
+    }
+
+    /* ============================
+       HEADER
+    ============================ */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--white);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .logo-badge {
+      width: 40px; height: 40px;
+      background: var(--blue-main);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .logo-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      line-height: 1.2;
+    }
+    .logo-name small {
+      display: block;
+      font-size: 0.68rem;
+      color: var(--gray);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 4px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.87rem;
+      font-weight: 500;
+      padding: 7px 13px;
+      border-radius: 4px;
+      transition: color .2s, background .2s;
+    }
+    nav a:hover { color: var(--blue-main); background: var(--blue-pale); }
+    .nav-cta {
+      background: var(--blue-main) !important;
+      color: #fff !important;
+    }
+    .nav-cta:hover { background: var(--blue-dark) !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--blue-dark);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ============================
+       HERO
+    ============================ */
+    #hero {
+      padding-top: 68px;
+      min-height: 100vh;
+      background: linear-gradient(140deg, var(--blue-dark) 0%, var(--blue-mid) 55%, #1E88E5 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -150px;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -250px; left: -100px;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 60px 0;
+    }
+
+    .hero-label {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.1);
+      color: #fff;
+      font-size: 0.82rem;
+      padding: 5px 16px;
+      border-radius: 20px;
+      margin-bottom: 22px;
+      letter-spacing: .06em;
+    }
+    .hero-title {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.35;
+      margin-bottom: 22px;
+      letter-spacing: .02em;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: #90CAF9;
+    }
+    .hero-desc {
+      color: rgba(255,255,255,.88);
+      font-size: 1rem;
+      line-height: 1.9;
+      margin-bottom: 36px;
+    }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-white {
+      display: inline-block;
+      background: #fff;
+      color: var(--blue-dark);
+      font-weight: 700;
+      padding: 15px 34px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.97rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,.16);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 7px 22px rgba(0,0,0,.22); }
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,.65);
+      color: #fff;
+      font-weight: 600;
+      padding: 13px 30px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.97rem;
+      transition: background .2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.12); }
+
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 50px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,.22);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: #fff; }
+    .stat-label { font-size: 0.78rem; color: rgba(255,255,255,.75); margin-top: 4px; }
+
+    /* Hero card panel */
+    .hero-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 12px;
+      padding: 32px;
+      backdrop-filter: blur(6px);
+      color: #fff;
+    }
+    .hero-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255,255,255,.25);
+      letter-spacing: .04em;
+    }
+    .hero-card-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 0.9rem;
+    }
+    .hero-card-icon {
+      width: 34px; height: 34px;
+      background: rgba(255,255,255,.15);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .hero-card-item p { opacity: .85; font-size: 0.82rem; margin-top: 2px; }
+
+    /* ============================
+       基本情報バー
+    ============================ */
+    #info-bar {
+      background: var(--blue-dark);
+      padding: 0;
+    }
+    .info-bar-inner {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .info-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 18px 28px;
+      color: #fff;
+      border-right: 1px solid rgba(255,255,255,.18);
+      flex: 1;
+      min-width: 200px;
+    }
+    .info-bar-item:last-child { border-right: none; }
+    .info-bar-icon { font-size: 1.2rem; opacity: .8; flex-shrink: 0; }
+    .info-bar-text strong {
+      display: block;
+      font-size: 0.7rem;
+      opacity: .65;
+      letter-spacing: .06em;
+      margin-bottom: 2px;
+    }
+    .info-bar-text span { font-size: 0.88rem; }
+
+    /* ============================
+       会社概要
+    ============================ */
+    #about { background: var(--gray-light); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .about-lead h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 18px;
+      line-height: 1.55;
+    }
+    .about-lead p {
+      color: #555;
+      margin-bottom: 14px;
+      font-size: 0.93rem;
+    }
+
+    .about-table { width: 100%; border-collapse: collapse; }
+    .about-table tr { border-bottom: 1px solid #e0e0e0; }
+    .about-table th {
+      width: 33%;
+      padding: 13px 16px;
+      background: var(--blue-pale);
+      color: var(--blue-dark);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: left;
+      vertical-align: top;
+    }
+    .about-table td {
+      padding: 13px 16px;
+      font-size: 0.88rem;
+      color: #444;
+      background: #fff;
+      vertical-align: top;
+    }
+
+    /* ============================
+       強み・理念
+    ============================ */
+    #strengths { background: #fff; }
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .strength-card {
+      background: var(--gray-light);
+      border-radius: 8px;
+      padding: 30px;
+      border-left: 4px solid var(--blue-main);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .strength-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(21,101,192,.12);
+    }
+    .strength-no {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--blue-light);
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+    .strength-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 12px;
+    }
+    .strength-card p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.85;
+    }
+
+    /* ============================
+       技術・サービス
+    ============================ */
+    #services { background: var(--blue-pale); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 34px 26px;
+      text-align: center;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(21,101,192,.14);
+    }
+    .service-icon {
+      width: 68px; height: 68px;
+      background: var(--blue-pale);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 18px;
+    }
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--blue-pale);
+    }
+    .service-card ul { list-style: none; text-align: left; }
+    .service-card ul li {
+      padding: 7px 0;
+      color: #555;
+      font-size: 0.86rem;
+      border-bottom: 1px dotted #ddd;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .service-card ul li:last-child { border-bottom: none; }
+    .service-card ul li::before {
+      content: '▷';
+      color: var(--blue-light);
+      font-size: 0.65rem;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ============================
+       施工実績
+    ============================ */
+    #works { background: #fff; }
+    .works-clients {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 50px;
+    }
+    .client-tag {
+      background: var(--blue-dark);
+      color: #fff;
+      padding: 10px 26px;
+      border-radius: 28px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .work-card {
+      background: var(--gray-light);
+      border-radius: 8px;
+      padding: 26px;
+      border-top: 3px solid var(--blue-light);
+    }
+    .work-card h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 14px;
+    }
+    .work-card ul { list-style: none; }
+    .work-card ul li {
+      padding: 6px 0;
+      color: #555;
+      font-size: 0.86rem;
+      border-bottom: 1px dotted #ddd;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .work-card ul li:last-child { border-bottom: none; }
+    .work-card ul li::before {
+      content: '●';
+      color: var(--blue-light);
+      font-size: 0.45rem;
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ============================
+       お問い合わせ
+    ============================ */
+    #contact { background: var(--gray-light); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contact-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 16px;
+    }
+    .contact-info > p {
+      color: #555;
+      font-size: 0.91rem;
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+    .contact-details { display: flex; flex-direction: column; gap: 14px; }
+    .contact-detail {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .cd-icon {
+      width: 36px; height: 36px;
+      background: var(--blue-main);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .cd-text { font-size: 0.88rem; color: #555; }
+    .cd-text strong { display: block; color: #333; margin-bottom: 2px; font-size: 0.82rem; }
+
+    /* Form */
+    .contact-form {
+      background: #fff;
+      border-radius: 10px;
+      padding: 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.07);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 6px;
+    }
+    .req {
+      color: #E53935;
+      font-size: 0.72rem;
+      margin-left: 4px;
+      font-weight: 700;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #d0d0d0;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      background: #fafafa;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue-main);
+      box-shadow: 0 0 0 3px rgba(21,101,192,.1);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--blue-main);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      letter-spacing: .04em;
+      transition: background .2s, transform .2s;
+    }
+    .submit-btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    footer { background: var(--blue-dark); }
+    .footer-body { padding: 52px 0; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .footer-brand p {
+      color: rgba(255,255,255,.68);
+      font-size: 0.84rem;
+      line-height: 1.85;
+    }
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .06em;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a {
+      color: rgba(255,255,255,.65);
+      text-decoration: none;
+      font-size: 0.84rem;
+      transition: color .2s;
+    }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-col address {
+      font-style: normal;
+      color: rgba(255,255,255,.65);
+      font-size: 0.84rem;
+      line-height: 1.95;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.15);
+      padding: 18px 0;
+      text-align: center;
+    }
+    .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,.5); }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 36px; }
+      .strengths-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .works-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+
+    @media (max-width: 768px) {
+      section { padding: 60px 0; }
+      .section-title { font-size: 1.6rem; }
+
+      nav {
+        display: none;
+        position: fixed;
+        top: 68px; left: 0; right: 0;
+        background: #fff;
+        padding: 16px 20px;
+        box-shadow: 0 6px 16px rgba(0,0,0,.1);
+      }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; gap: 4px; }
+      nav a { display: block; padding: 12px 16px; }
+      .hamburger { display: flex; }
+
+      .info-bar-inner { flex-direction: column; }
+      .info-bar-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.18); min-width: 0; }
+      .info-bar-item:last-child { border-bottom: none; }
+
+      .hero-stats { flex-direction: column; gap: 18px; }
+      .hero-btns { flex-direction: column; }
+      .btn-white, .btn-outline { text-align: center; }
+
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .works-clients { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <div class="logo-badge">賢</div>
+        <div class="logo-name">
+          株式会社賢材社
+          <small>KENZAISHA CO., LTD.</small>
+        </div>
+      </a>
+
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#about">会社概要</a></li>
+          <li><a href="#strengths">強み・理念</a></li>
+          <li><a href="#services">技術・サービス</a></li>
+          <li><a href="#works">施工実績</a></li>
+          <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-label">建設設備のプロフェッショナル集団</span>
+        <h1 class="hero-title">
+          確かな技術力で、<br>
+          <em>建築設備の未来</em>を<br>
+          つくる。
+        </h1>
+        <p class="hero-desc">
+          施工管理から設備諸工事・総合試運転性能検証まで。<br>
+          システム性能検証・設備設計に特化した技術力で、<br>
+          お客様のご要求を満足する企画提案を行います。
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-white">無料でご相談する</a>
+          <a href="#services" class="btn-outline">サービスを見る</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">3</div>
+            <div class="stat-label">主要事業領域</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">2</div>
+            <div class="stat-label">専門部署体制</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">お客様への貢献</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>◆ 主な事業領域</h3>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">🏗️</div>
+          <div>
+            <strong>請負い工事</strong>
+            <p>施工管理・設備諸工事・測定調整総合試運転</p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">📐</div>
+          <div>
+            <strong>工事計画業務</strong>
+            <p>設備設計企画・工事計画・既存改修設計</p>
+          </div>
+        </div>
+        <div class="hero-card-item">
+          <div class="hero-card-icon">🔧</div>
+          <div>
+            <strong>エンドユーザー支援</strong>
+            <p>設備診断・省エネ提案・アフターフォロー</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 基本情報バー ==================== -->
+<div id="info-bar">
+  <div class="container">
+    <div class="info-bar-inner">
+      <div class="info-bar-item">
+        <span class="info-bar-icon">📍</span>
+        <div class="info-bar-text">
+          <strong>所在地</strong>
+          <span>大阪市淀川区宮原1丁目19-10 新大阪エクセルビル</span>
+        </div>
+      </div>
+      <div class="info-bar-item">
+        <span class="info-bar-icon">📞</span>
+        <div class="info-bar-text">
+          <strong>TEL</strong>
+          <span>06-6151-4512</span>
+        </div>
+      </div>
+      <div class="info-bar-item">
+        <span class="info-bar-icon">📠</span>
+        <div class="info-bar-text">
+          <strong>FAX</strong>
+          <span>06-6151-4513</span>
+        </div>
+      </div>
+      <div class="info-bar-item">
+        <span class="info-bar-icon">🕐</span>
+        <div class="info-bar-text">
+          <strong>受付時間</strong>
+          <span>平日 9:00〜18:00（土日祝休）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 会社概要 ==================== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">会社概要</h2>
+    <p class="section-sub">ABOUT US</p>
+    <div class="about-grid">
+      <div class="about-lead">
+        <h3>建築設備業の人手不足に、<br>高い技術力で貢献する</h3>
+        <p>
+          当社は施工管理業務を主軸とし、設備諸工事及び総合試運転性能検証までを請負う技術チームとして、今後人手不足の進行が懸念される建築設備業へ貢献します。
+        </p>
+        <p>
+          システム性能検証や設備設計及び計画業務に特化した技術力で、エンドユーザー様のニーズを的確に把握し、ご要求を満足する企画提案力を持つチームとして社会に貢献します。
+        </p>
+        <p>
+          建築設備の工事現場において、管理監督者と施工業者のスムーズな連携を構築し、安全かつ高品質な工事工程の運営を実現します。
+        </p>
+      </div>
+      <div>
+        <table class="about-table">
+          <tr>
+            <th>会社名</th>
+            <td>株式会社賢材社</td>
+          </tr>
+          <tr>
+            <th>事業内容</th>
+            <td>建設設備工事・施工管理<br>設備設計企画・技術コンサルティング</td>
+          </tr>
+          <tr>
+            <th>所在地</th>
+            <td>〒532-0011<br>大阪市淀川区宮原1丁目19-10<br>新大阪エクセルビル</td>
+          </tr>
+          <tr>
+            <th>TEL</th>
+            <td>06-6151-4512</td>
+          </tr>
+          <tr>
+            <th>FAX</th>
+            <td>06-6151-4513</td>
+          </tr>
+          <tr>
+            <th>組織体制</th>
+            <td>建築設備事業部 / 技術企画推進部</td>
+          </tr>
+          <tr>
+            <th>主な受注先</th>
+            <td>大手ゼネコン・サブコン<br>エンドユーザー様・協力会社様</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 強み・理念 ==================== -->
+<section id="strengths">
+  <div class="container">
+    <h2 class="section-title">会社の強み・理念</h2>
+    <p class="section-sub">OUR STRENGTHS &amp; PHILOSOPHY</p>
+    <div class="strengths-grid">
+      <div class="strength-card">
+        <div class="strength-no">STRENGTH 01</div>
+        <h3>管理から施工まで自社で一貫対応</h3>
+        <p>施工管理をベースとし諸工事を行うため、管理監督業務と工事施工を自社で担うことができ、スムーズな工事の連携が構築されます。工程立案・工程管理においても有効に機能し、安全かつ高品質な工事工程の運営を可能にします。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-no">STRENGTH 02</div>
+        <h3>試運転・性能検証の高い専門技術</h3>
+        <p>試運転及び性能検証を行うことで、当該工事の設計内容・思想を深く理解できる当社は、引渡し後のエンドユーザーのアフターフォロー面において、ニーズを的確に把握した対応が出来る技術チームとなります。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-no">STRENGTH 03</div>
+        <h3>既設改修計画における高い提案力</h3>
+        <p>既設改修計画では、既存システムの把握や客先要求ニーズの把握面において高い理解力を有しており、客先のご要求を満足する設計提案力・企画力を有しています。省エネ更新提案など付加価値の高いご提案が可能です。</p>
+      </div>
+      <div class="strength-card">
+        <div class="strength-no">STRENGTH 04</div>
+        <h3>エンドユーザーへの的確なアフターフォロー</h3>
+        <p>設備診断・省エネ更新提案など、エンドユーザー様のニーズを的確に把握した設計技術提案を行います。引渡し後のメンテナンスサービスアフターフォローまで、長期的なパートナーシップを構築します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 技術・サービス ==================== -->
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">技術・サービス</h2>
+    <p class="section-sub">TECHNOLOGY &amp; SERVICES</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <h3>請負い工事</h3>
+        <ul>
+          <li>施工管理</li>
+          <li>設備諸工事</li>
+          <li>測定調整総合試運転</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>工事計画業務</h3>
+        <ul>
+          <li>設備設計企画業務</li>
+          <li>工事での計画業務</li>
+          <li>既存改修における設計計画業務</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>エンドユーザー支援</h3>
+        <ul>
+          <li>設計技術提案（設備診断）</li>
+          <li>省エネ更新提案</li>
+          <li>メンテナンスサービスアフターフォロー</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 施工実績 ==================== -->
+<section id="works">
+  <div class="container">
+    <h2 class="section-title">施工実績</h2>
+    <p class="section-sub">CONSTRUCTION WORKS</p>
+    <div class="works-clients">
+      <span class="client-tag">大手ゼネコン</span>
+      <span class="client-tag">大手サブコン</span>
+      <span class="client-tag">エンドユーザー様</span>
+      <span class="client-tag">協力会社様</span>
+    </div>
+    <div class="works-grid">
+      <div class="work-card">
+        <h3>🏢 建築設備工事</h3>
+        <ul>
+          <li>空調設備工事・施工管理</li>
+          <li>衛生設備工事・施工管理</li>
+          <li>電気設備工事・施工管理</li>
+          <li>設備諸工事の一括請負</li>
+        </ul>
+      </div>
+      <div class="work-card">
+        <h3>⚙️ 試運転・性能検証</h3>
+        <ul>
+          <li>空調システム総合試運転</li>
+          <li>生産用力・ユーティリティー設備の性能確認</li>
+          <li>測定調整業務</li>
+          <li>システム性能検証レポート作成</li>
+        </ul>
+      </div>
+      <div class="work-card">
+        <h3>📋 設計・コンサルティング</h3>
+        <ul>
+          <li>建築設備改修における設計企画コンサル</li>
+          <li>メッキ設備における設計企画コンサル</li>
+          <li>省エネ改修提案・計画</li>
+          <li>設備診断・劣化調査</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== お問い合わせ ==================== -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">お問い合わせ</h2>
+    <p class="section-sub">CONTACT US</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>お気軽にご相談ください</h3>
+        <p>
+          建設設備に関するご相談・お見積もりのご依頼など、どんな些細なことでもお気軽にお問い合わせください。専門スタッフが丁寧にご対応いたします。
+        </p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon">📍</div>
+            <div class="cd-text">
+              <strong>所在地</strong>
+              大阪市淀川区宮原1丁目19-10<br>新大阪エクセルビル
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">📞</div>
+            <div class="cd-text">
+              <strong>TEL</strong>
+              06-6151-4512
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">📠</div>
+            <div class="cd-text">
+              <strong>FAX</strong>
+              06-6151-4513
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon">🕐</div>
+            <div class="cd-text">
+              <strong>受付時間</strong>
+              平日 9:00〜18:00（土日祝休）
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>お名前<span class="req">必須</span></label>
+              <input type="text" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label>会社名</label>
+              <input type="text" placeholder="株式会社〇〇">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" placeholder="example@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" placeholder="06-XXXX-XXXX">
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ種別<span class="req">必須</span></label>
+            <select required>
+              <option value="">選択してください</option>
+              <option>施工管理・設備工事のご依頼</option>
+              <option>設備設計・計画業務のご相談</option>
+              <option>試運転・性能検証のご依頼</option>
+              <option>設備診断・省エネ提案のご相談</option>
+              <option>メンテナンス・アフターフォロー</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ内容<span class="req">必須</span></label>
+            <textarea placeholder="ご相談内容をご記入ください" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">送信する</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-body">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-brand-name">株式会社賢材社</span>
+          <p>
+            施工管理業務を主軸とし、設備諸工事及び総合試運転性能検証までを請負う技術チームとして、人手不足が懸念される建築設備業の発展に貢献します。
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>サービス</h4>
+          <ul>
+            <li><a href="#services">施工管理・設備工事</a></li>
+            <li><a href="#services">測定調整総合試運転</a></li>
+            <li><a href="#services">設備設計企画業務</a></li>
+            <li><a href="#services">設計企画コンサルティング</a></li>
+            <li><a href="#services">メンテナンス・アフターフォロー</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>会社情報</h4>
+          <address>
+            〒532-0011<br>
+            大阪市淀川区宮原1丁目19-10<br>
+            新大阪エクセルビル<br><br>
+            TEL：06-6151-4512<br>
+            FAX：06-6151-4513<br>
+            平日 9:00〜18:00
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2025 株式会社賢材社 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const nav = document.getElementById('nav-menu');
+  hamburger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+  });
+  document.querySelectorAll('#nav-menu a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      nav.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
