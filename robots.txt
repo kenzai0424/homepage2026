@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.your-domain.com/sitemap.xml
+Sitemap: https://kenzai0424.github.io/homepage2026/sitemap.xml
